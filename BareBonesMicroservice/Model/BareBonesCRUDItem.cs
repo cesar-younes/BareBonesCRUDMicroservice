@@ -8,6 +8,7 @@ namespace BareBonesMicroservice.Model
 {
     public class BareBonesCRUDItem : BaseEntity
     {
+        //TODO: Change this to a type EF accepts. For now I'm ignoring it.
         [NotMapped]
         public List<string> Items { get; set; }
         public string Name { get; set; }
