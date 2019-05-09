@@ -1,4 +1,4 @@
-﻿using BareBonesCRUDMicroservice.Model;
+﻿using BareBonesCRUDMicroservice.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;

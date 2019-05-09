@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BareBonesCRUDMicroservice.Data;
+using BareBonesCRUDMicroservice.Interfaces;
 using BareBonesCRUDMicroservice.Model;
-using BareBonesMicroservice.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,7 +34,7 @@ namespace BareBonesMicroservice
 
             services.AddDbContext<BareBonesCRUDContext>(options => options.UseInMemoryDatabase(databaseName: "BareBonesCRUDDb"));
 
-            services.AddScoped<IBareBonesCRUDRepository, BareBonesCRUDRepository>();
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

@@ -1,11 +1,11 @@
-﻿using BareBonesMicroservice.Model;
+﻿using BareBonesCRUDMicroservice.Model;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BareBonesCRUDMicroservice.Model
+namespace BareBonesCRUDMicroservice.Data
 {
     public class BareBonesCRUDContextSeed
     {

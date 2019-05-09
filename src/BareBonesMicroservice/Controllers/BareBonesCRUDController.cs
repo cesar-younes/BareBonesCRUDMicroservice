@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BareBonesMicroservice.Model;
+using BareBonesCRUDMicroservice.Interfaces;
+using BareBonesCRUDMicroservice.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,9 +13,9 @@ namespace BareBonesMicroservice.Controllers
     [ApiController]
     public class BareBonesCRUDController : ControllerBase
     {
-        private IBareBonesCRUDRepository _repository;
+        private IAsyncRepository<BareBonesCRUDItem> _repository;
 
-        public BareBonesCRUDController(IBareBonesCRUDRepository repository)
+        public BareBonesCRUDController(IAsyncRepository<BareBonesCRUDItem> repository)
         {
             _repository = repository;
         }
@@ -22,7 +23,7 @@ namespace BareBonesMicroservice.Controllers
         [HttpGet]
         public IActionResult List()
         {
-            return Ok(_repository.GetItems());
+            return Ok(_repository.ListAllAsync());
         }
     }
 }

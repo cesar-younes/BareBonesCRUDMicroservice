@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BareBonesMicroservice.Model
+namespace BareBonesCRUDMicroservice.Model
 {
     public class BareBonesCRUDItem : BaseEntity
     {
