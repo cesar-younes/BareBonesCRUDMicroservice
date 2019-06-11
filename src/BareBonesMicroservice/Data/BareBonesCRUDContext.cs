@@ -16,5 +16,6 @@ namespace BareBonesCRUDMicroservice.Data
         }
 
         public DbSet<BareBonesCRUDItem> BareBonesCRUDItems { get; set; }
+        public DbSet<SubBareBonesCRUDItem> SubBareBonesCRUDItems { get; set; }
     }
 }
