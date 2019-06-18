@@ -35,24 +35,24 @@ namespace BareBonesMicroservice
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             //Uncomment to use In-Memory DB
-            //services.AddDbContext<BareBonesCRUDContext>(options => options.UseInMemoryDatabase(databaseName: "BareBonesCRUDDb"));
-            Debug.WriteLine("assemblyName::::::"+ typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
-            //Add SQL Server Context
-            services.AddDbContext<BareBonesCRUDContext>(options =>
-            {
-                options.UseSqlServer(Configuration["ConnectionString"],
-                                     sqlServerOptionsAction: sqlOptions =>
-                                     {
-                                         sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
-                                         //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency 
-                                         sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
-                                     });
+            services.AddDbContext<BareBonesCRUDContext>(options => options.UseInMemoryDatabase(databaseName: "BareBonesCRUDDb"));
+            
+            //Uncomment to use SQL Server Context
+            // services.AddDbContext<BareBonesCRUDContext>(options =>
+            // {
+            //     options.UseSqlServer(Configuration["ConnectionString"],
+            //                          sqlServerOptionsAction: sqlOptions =>
+            //                          {
+            //                              sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+            //                              //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency 
+            //                              sqlOptions.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+            //                          });
 
-                // Changing default behavior when client evaluation occurs to throw. 
-                // Default in EF Core would be to log a warning when client evaluation is performed.
-                //options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
-                //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
-            });
+            //     // Changing default behavior when client evaluation occurs to throw. 
+            //     // Default in EF Core would be to log a warning when client evaluation is performed.
+            //     //options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
+            //     //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
+            // });
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
 

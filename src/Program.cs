@@ -23,7 +23,7 @@ namespace BareBonesMicroservice
                     var bareBonesCRUDContext = services.GetRequiredService<BareBonesCRUDContext>();
                     BareBonesCRUDContextSeed.SeedAsync(bareBonesCRUDContext, loggerFactory).Wait();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //var logger = loggerFactory.CreateLogger<Program>();
                     //logger.LogError(ex, "An error occurred seeding the DB.");
