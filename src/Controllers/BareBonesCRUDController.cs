@@ -7,9 +7,9 @@ using BareBonesCRUDMicroservice.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BareBonesMicroservice.Controllers
+namespace BareBonesCRUDMicroservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class BareBonesCRUDController : ControllerBase
     {

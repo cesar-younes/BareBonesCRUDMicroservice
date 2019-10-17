@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BareBonesCRUDMicroservice.Data
 {
+    //Implementation of the Specification Pattern for Entity Framework
     public class SpecificationEvaluator<T> where T : BaseEntity
     {
         public static IQueryable<T> GetQuery(IQueryable<T> inputQuery, ISpecification<T> specification)

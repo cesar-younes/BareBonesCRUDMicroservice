@@ -40,19 +40,34 @@ namespace BareBonesCRUDMicroservice.Data
             {
                 Name = "A",
                 Status = "Active",
-                Items = new List<string>() { "a", "b", "c" }
+                Items = new List<SubBareBonesCRUDItem>() { 
+                    new SubBareBonesCRUDItem()
+                    {
+                        Timestamp = DateTime.Now,
+                    }
+                }
             };
             items[1] = new BareBonesCRUDItem
             {
                 Name = "B",
                 Status = "Deleted",
-                Items = new List<string>() { "a", "b", "c" }
+                Items = new List<SubBareBonesCRUDItem>() {
+                    new SubBareBonesCRUDItem()
+                    {
+                        Timestamp = DateTime.Now,
+                    }
+                }
             };                                         
             items[2] = new BareBonesCRUDItem           
             {                                          
                 Name = "C",                            
-                Status = "Archived",                   
-                Items = new List<string>() { "a", "b", "c" }
+                Status = "Archived",
+                Items = new List<SubBareBonesCRUDItem>() {
+                    new SubBareBonesCRUDItem()
+                    {
+                        Timestamp = DateTime.Now,
+                    }
+                }
             };
             return items;
         }
