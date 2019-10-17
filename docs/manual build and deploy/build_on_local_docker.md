@@ -2,7 +2,7 @@
 
 In order to not just create a copy of what the documentation already provides I only included a cheat sheet of commands that you can run to get from code to a container running locally in docker.
 For more complete instructions and explanation refer to this page: https://docs.microsoft.com/en-us/dotnet/core/docker/build-container or this page: https://docs.docker.com/engine/examples/dotnetcore/
-Change directory to the rool of the repo where the Dockerfile is stored and run this command
+Change directory to into the src folder where the Dockerfile is stored and run this command
 ```
 docker build -t barebonescrudmicroservice .
 ```
