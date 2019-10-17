@@ -20,8 +20,6 @@ For debugging purposes, since we're running in detached mode, you can check the 
 docker logs 92d9
 ```
 The output should be something like this
-warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {cb786682-3883-40c6-ae5d-6b7a0afe98db} may be persisted to storage in unencrypted form.
 Hosting environment: Production
 Content root path: /app
 Now listening on: http://[::]:80
