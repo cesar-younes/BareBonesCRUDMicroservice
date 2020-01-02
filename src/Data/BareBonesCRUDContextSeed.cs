@@ -39,7 +39,7 @@ namespace BareBonesCRUDMicroservice.Data
             items[0] = new BareBonesCRUDItem
             {
                 Name = "A",
-                Status = "Active",
+                Status = ItemStatus.New,
                 Items = new List<SubBareBonesCRUDItem>() { 
                     new SubBareBonesCRUDItem()
                     {
@@ -50,7 +50,7 @@ namespace BareBonesCRUDMicroservice.Data
             items[1] = new BareBonesCRUDItem
             {
                 Name = "B",
-                Status = "Deleted",
+                Status = ItemStatus.Accepted,
                 Items = new List<SubBareBonesCRUDItem>() {
                     new SubBareBonesCRUDItem()
                     {
@@ -61,7 +61,7 @@ namespace BareBonesCRUDMicroservice.Data
             items[2] = new BareBonesCRUDItem           
             {                                          
                 Name = "C",                            
-                Status = "Archived",
+                Status = ItemStatus.Deleted,
                 Items = new List<SubBareBonesCRUDItem>() {
                     new SubBareBonesCRUDItem()
                     {

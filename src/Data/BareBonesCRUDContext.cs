@@ -17,5 +17,16 @@ namespace BareBonesCRUDMicroservice.Data
 
         public DbSet<BareBonesCRUDItem> BareBonesCRUDItems { get; set; }
         public DbSet<SubBareBonesCRUDItem> SubBareBonesCRUDItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<BareBonesCRUDItem>()
+                .Property(bb => bb.Status)
+                .HasConversion(
+                    bb => bb.Value,
+                    bb => ItemStatus.FromValue(bb));
+        }
     }
 }
